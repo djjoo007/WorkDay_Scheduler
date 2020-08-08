@@ -10,7 +10,27 @@ $(document).ready(function () {
         localStorage.setItem(time, value);
     });
 
-    function timeHighLight
+    function timeHighLight () {
+        // display current time with moment
+        var currentTime = moment().hour();
+    
+        $('.time-block').each(function() {
+
+            var blockTime = parseInt($(this).attr('id').split('-')[1]);
+
+            if (blockTime < currentTime) {
+                $(this).addClass('past');
+                
+            }
+
+            
+
+        })
+
+
+
+
+    }
 
 
 
